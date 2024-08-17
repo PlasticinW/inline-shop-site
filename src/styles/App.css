@@ -1,0 +1,257 @@
+:root {
+  --color-black: #B2B2B2;
+  --content-width: 1066px;
+}
+
+.main {
+  width: var(--content-width);
+  margin: 0 auto;
+}
+
+/* top-menu(tabs) */
+.menu {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    height: 50px;
+    gap: 80px;
+}
+
+.menu > label {
+  font-family: arial;
+}
+
+.menu > input[type="radio"]{
+  display: none;
+}
+
+.menu > input[type="radio"]:checked + label {
+  font-weight: bold;
+  border-bottom: 3px solid #429F3A;
+}
+
+#description:checked~#main-content__description,
+#reviews:checked~#main-content__reviews,
+#where-from:checked~#main-content__where-from {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  font-weight: 400;
+  font-size: 14px;
+  font-family: Arial;
+  line-height: 20px;
+
+  overflow-wrap: break-word;
+  
+  color: #444444;
+}
+
+.separator-strip {
+  width: inherit;
+  margin: 0 auto 30px;
+  border: 0.1px solid var(--color-black);
+}
+
+/* Основная страница описания */
+.main-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content__tab {
+  display: none;
+}
+
+.main-content__tab > p {
+  font-size: 16px;
+}
+
+p+p {
+  margin-top: 24px;
+  display: block;
+}
+
+.product-characteristics-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  gap: 0 10px;
+  position: relative;
+}
+
+.product-card-description {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  margin: 10px 0 50px 0;
+}
+
+.product-characterisctics__group {
+  width: calc(var(--content-width) / 2 - 50px);
+  margin-top: 30px;
+}
+
+.product-characterisctics__group-title {
+  font-size: 20px;
+}
+
+.product-characteristics__spec {
+  grid-gap: 16px;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 20px;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.product-characteristics__spec-value {
+  text-align: right;
+}
+
+/* Карточки товаров */
+.more-products {
+  width: inherit;
+}
+
+.more-products__title {
+  font-size: 28px;
+  font-family: Arial;
+  margin: 0 0 40px 0;
+}
+
+.more-products__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.more-products__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  width: 22%;
+  margin-bottom: 20px;
+
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.more-products__wrapper:hover {
+  outline: 2px solid gold;
+  transform: scale(105%);
+}
+
+.more-products__wrapper-image {
+  max-width: 100%;
+  border-top-left-radius: 2%;
+  border-top-right-radius: 2%;
+}
+
+.more-products__wrapper-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.more-products__wrapper-author {
+  color: #89817F;
+  margin-bottom: 30px;
+}
+
+.more-products__wrapper-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 10px;
+
+  width: 100%;
+}
+
+.more-products__wrapper-line {
+  margin-bottom: 5px;
+}
+
+.more-products__wrapper-cost {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.more-products__wrapper-size {
+  font-size: 16px;
+  color: #89817F;
+}
+
+/* Рейтинг-звёзды для карточек */
+.more-products__rating-result {
+	width: 265px;
+}
+.more-products__rating-result span {
+	padding: 0;
+	font-size: 20px;
+	margin-right: 3px;
+	line-height: 1;
+	color: lightgrey;
+	text-shadow: 1px 1px #bbb;
+}
+.more-products__rating-result > span:before {
+	content: '★';
+}
+.more-products__rating-result > span.active {
+	color: gold;
+	text-shadow: 1px 1px #c60;
+}
+
+/* Кнопка покупки */
+.buy-button {
+  position: absolute;
+  background-color: #429F3A;
+  color: #fff;
+  height: 45px;
+  width: 80px;
+
+  right: 0;
+  bottom: 30px;
+
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+
+  opacity: .9;
+  transition: all .25s ease;
+  cursor: pointer;
+}
+
+.buy-button:hover {
+  opacity: 1;
+}
+
+.like-button {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+
+  right: 15px;
+  top: 10px;
+
+  opacity: .9;
+  transition: all .25s ease;
+  cursor: pointer;
+}
+
+.like-button:hover {
+  color: #666;
+  transform: scale(105%);
+}
+
+/* Общие стили */
