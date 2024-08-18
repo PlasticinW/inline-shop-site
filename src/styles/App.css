@@ -50,6 +50,7 @@
   font-weight: bold;
 }
 
+/* круглый border-bottom под табами */
 .tabs li.is-active a::before {
   position: absolute;
   content: "";
@@ -111,7 +112,6 @@ p+p {
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-between;
-  gap: 0 10px;
   position: relative;
 }
 
@@ -158,8 +158,11 @@ p+p {
 
 .more-products__list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  gap: 20px;
+  padding: 15px 10px;
 
 }
 
@@ -169,7 +172,7 @@ p+p {
   align-items: center;
   flex-direction: column;
 
-  width: 22%;
+  width: calc(var(--content-width)*0.23);
   margin-bottom: 20px;
 
   background: #fff;
@@ -328,6 +331,8 @@ p+p {
 .wrapper-buttons>button {
   width: 170px;
   height: 40px;
+  font-family: Arial;
+  font-weight: 400;
   color: var(--color-black-for-text);
   border: 1px solid var(--color-black);
   border-radius: 5px;
@@ -342,6 +347,7 @@ p+p {
 p {
   color: var(--color-black-for-text);
   line-height: 25px;
+  font-size: 16px;
 }
 
 span {

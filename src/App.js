@@ -95,7 +95,7 @@ class App extends React.Component {
 
                       <div className="product-characteristics__spec">
                         <div className="product-characteristics__spec-title">Поставщик</div>
-                        <div className="product-characteristics__spec-value">Фермеры: Наталья и Юрий Лейшан</div>
+                        <div className="product-characteristics__spec-value">Наталья и Юрий Лейшан</div>
                       </div>
 
                       <div className="product-characteristics__spec">
@@ -312,10 +312,12 @@ class App extends React.Component {
 
             <menu data-content="2">
               <div className="main-content__tab" id="main-content__reviews">
-                <p>Помогите нам стать ещё лучше. Оставляя отзывы, вы таким образом <br />
-                указываете нам на зоны роста. Мы правда, читаем все отзывы.</p>
+                <div className="main-content__tab-reviews">
+                  <p>Помогите нам стать ещё лучше. Оставляя отзывы, вы таким образом <br />
+                  указываете нам на зоны роста. Мы правда, читаем все отзывы.</p>
 
-                <button className="review-button">Оставить отзыв</button>
+                  <button className="review-button">Оставить отзыв</button>
+                </div>
               </div>
             </menu>
 
