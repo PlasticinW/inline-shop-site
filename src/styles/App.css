@@ -1,5 +1,6 @@
 :root {
   --color-black: #B2B2B2;
+  --color-black-for-text: #444444;
   --content-width: 1066px;
 }
 
@@ -16,55 +17,83 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
+    border-bottom: 1px solid #dbdbdb;
     
     height: 50px;
     gap: 80px;
 }
 
-.menu > label {
-  font-family: arial;
-}
-
-.menu > input[type="radio"]{
+.tab-content menu {
   display: none;
 }
 
-.menu > input[type="radio"]:checked + label {
-  font-weight: bold;
-  border-bottom: 3px solid #429F3A;
+.tab-content menu.is-active {
+  display: block;
 }
 
-#description:checked~#main-content__description,
-#reviews:checked~#main-content__reviews,
-#where-from:checked~#main-content__where-from {
+.tabs ul {
+  align-items: center;
+
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  font-weight: 400;
-  font-size: 14px;
-  font-family: Arial;
-  line-height: 20px;
-
-  overflow-wrap: break-word;
-  
-  color: #444444;
+  flex-grow: 1;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  gap: 40px;
 }
 
-.separator-strip {
-  width: inherit;
-  margin: 0 auto 30px;
-  border: 0.1px solid var(--color-black);
+.tabs li {
+  display: block;
+}
+
+.tabs li.is-active a {
+  font-weight: bold;
+}
+
+.tabs li.is-active a::before {
+  position: absolute;
+  content: "";
+  width: 120px;
+  height: 5px;
+  border-radius: 15px;
+  background-color: #429F3A;
+  bottom: -2px;
+
+  font-weight: bold;
+}
+
+.tabs a {
+  align-items: center;
+  color: #4a4a4a;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: -1px;
+  padding: .5em 1em;
+  vertical-align: top;
+
+  cursor: pointer;
 }
 
 /* Основная страница описания */
 .main-content {
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
 }
 
-.main-content__tab {
-  display: none;
+.tab-active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+
+  overflow-wrap: break-word;
+  
+  color: #444444;
 }
 
 .main-content__tab > p {
@@ -124,7 +153,6 @@ p+p {
 
 .more-products__title {
   font-size: 28px;
-  font-family: Arial;
   margin: 0 0 40px 0;
 }
 
@@ -132,6 +160,7 @@ p+p {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+
 }
 
 .more-products__wrapper {
@@ -160,14 +189,17 @@ p+p {
 }
 
 .more-products__wrapper-title {
+  color: var(--color-black-for-text);
   font-weight: bold;
   font-size: 16px;
   margin-bottom: 5px;
 }
 
 .more-products__wrapper-author {
+  font-family: Arial;
+  font-size: 14px;
   color: #89817F;
-  margin-bottom: 30px;
+  margin: 5px 0 40px 0;
 }
 
 .more-products__wrapper-info {
@@ -254,4 +286,68 @@ p+p {
   transform: scale(105%);
 }
 
+/* страница Отзывы */
+
+.review-button{
+  width: 160px;
+  height: 40px;
+  background-color: #429F3A;
+  color: #fff;
+  border-radius: 5px;
+  margin-top: 30px;
+
+  opacity: .9;
+  transition: opacity .25s ease;
+}
+
+.review-button:hover {
+  opacity: 1;
+}
+
+/* Страница Откуда? */
+.main-content__tab-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.main-content__tab-wrapper__left > p {
+  width: 510px;
+  font-size: 16px;
+}
+
+.main-content__tab-wrapper__right>img {
+  border-radius: 5px;
+}
+
+.wrapper-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.wrapper-buttons>button {
+  width: 170px;
+  height: 40px;
+  color: var(--color-black-for-text);
+  border: 1px solid var(--color-black);
+  border-radius: 5px;
+}
+
+.wrapper-buttons>button:hover {
+  outline: 1px solid #000;
+  transform: scale(102%);
+}
+
 /* Общие стили */
+p {
+  color: var(--color-black-for-text);
+  line-height: 25px;
+}
+
+span {
+  color: var(--color-black-for-text);
+}
+
+div {
+  font-size: 14px;
+}

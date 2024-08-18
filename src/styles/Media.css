@@ -1,0 +1,12 @@
+:root {
+    --content-width-1024px: 800px;
+}
+
+@media screen and (max-width: 1024px) {
+    .main {
+        width: var(--content-width-1024px);
+        margin: 0 auto;
+      }
+
+      
+}
