@@ -5,9 +5,10 @@
     --magazine-cards-width: 300px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 525px) and (max-width: 768px) {
+    /* Основной контейнер для всего содержимого */
     .main {
-        width: var(--content-width-768px);
+        max-width: 95%;
         margin: 0 20px;
     }
 
@@ -31,7 +32,7 @@
         flex-direction: column;
         align-items: center;
     }
-
+    /* Кнопки "сертификаты" и "о поставщике" в таб-вкладке "Откуда?" */
     .wrapper-buttons>button {
         font-weight: bold;
         color: #043E44;
@@ -39,29 +40,46 @@
 
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (min-width: 340px) and (max-width: 524px) {
+    /* Основной контейнер для всего содержимого */
     .main {
-        width: var(--content-width-360px);
-        margin: 0 20px;
+        max-width: 95%;
+        margin-left: 10px;
     }
-
+    /* Табы меню */
     .tabs ul {
         gap: none;
     }
 
+    /* текст с описанием продуктов */
+    .main-content__tab-mobile {
+        display: block;
+    }
+
+    .main-content__tab-desktop {
+        display: none;
+    }
+
+    /* Описание продуктов */
     .product-characterisctics__group {
-        width: var(--content-width-360px);
+        width: 95%;
     }
 
     .product-characteristics__spec {
         grid-gap: 0;
-        grid-template-columns: 170px 170px;
+        grid-template-columns: 50% 50%;
+    }
+    
+    /* Список карточек */
+    .more-products__list {
+        overflow-x: auto;
+        width: auto;
     }
 
     .more-products__wrapper {
         display: flex;
         flex-direction: row;
-        width: var(--magazine-cards-width);
+        width: 95%;
         height: 200px;
     }
 
@@ -80,7 +98,44 @@
         gap: 0;
     }
 
+    /* Список карточек для мобильной версии */
+    
+
     .main-content__tab-wrapper__left > p {
-        width: var(--content-width-360px);
+        width: 95%;
+    }
+
+    .main-content__tab-wrapper {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .main-content__tab-wrapper__left {
+        margin-bottom: 20px;
+        width: 95%;
+    }
+
+    .main-content__tab-wrapper__right {
+        width: 95%;
+    }
+
+    .main-content__tab-wrapper__right .main-content__tab-mobile > p {
+        margin-bottom: 20px;
+    }
+
+    .main-content__tab-reviews {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .wrapper-buttons {
+        margin-bottom: 30px;
+    }
+
+    .wrapper-buttons>button {
+        font-weight: bold;
+        color: #043E44;
     }
 }

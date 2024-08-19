@@ -3,7 +3,7 @@
   --color-black-for-text: #444444;
   --content-width: 1066px;
 }
-
+/* Основной контейнер для всего содержимого */
 .main {
   width: var(--content-width);
   margin: 0 auto;
@@ -113,6 +113,14 @@ p+p {
   align-content: center;
   justify-content: space-between;
   position: relative;
+}
+
+.main-content__tab-mobile {
+  display: none;
+}
+
+.main-content__tab-desktop {
+  display: block;
 }
 
 .product-card-description {
