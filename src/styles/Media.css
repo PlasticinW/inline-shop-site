@@ -43,9 +43,10 @@
 @media screen and (min-width: 340px) and (max-width: 524px) {
     /* Основной контейнер для всего содержимого */
     .main {
-        max-width: 95%;
+        max-width: 90%;
         margin-left: 10px;
     }
+
     /* Табы меню */
     .tabs ul {
         gap: none;
@@ -61,6 +62,20 @@
     }
 
     /* Описание продуктов */
+    .product-characterisctics__group-title__desktop {
+        display: none;
+    }
+      
+    .product-characterisctics__group-title__mobile {
+        display: block;
+    }
+
+    .product-characterisctics__group-title {
+        font-size: 16px;
+        font-weight: bold;
+        color: #444444;
+    }
+
     .product-characterisctics__group {
         width: 95%;
     }
@@ -69,38 +84,12 @@
         grid-gap: 0;
         grid-template-columns: 50% 50%;
     }
-    
-    /* Список карточек */
-    .more-products__list {
-        overflow-x: auto;
-        width: auto;
-    }
-
-    .more-products__wrapper {
-        display: flex;
-        flex-direction: row;
-        width: 95%;
-        height: 200px;
-    }
-
-    .more-products__wrapper-image {
-        max-width: calc(var(--magazine-cards-width) / 3);
-        border-radius: 10px;
-        margin-bottom: 40px;
-        padding: 1px;
-    }
 
     .tabs ul {
         gap: 0;
     }
 
-    .more-products__wrapper:last-child {
-        gap: 0;
-    }
-
-    /* Список карточек для мобильной версии */
-    
-
+    /* Вкладка "Откуда?" */
     .main-content__tab-wrapper__left > p {
         width: 95%;
     }
@@ -130,12 +119,82 @@
         align-items: center;
     }
 
+    .main-content__tab-wrapper__right img {
+        border-radius: 5px;
+        max-width: 100%;
+      }
+
     .wrapper-buttons {
-        margin-bottom: 30px;
+        margin-top: 30px;
     }
 
     .wrapper-buttons>button {
+        width: 49%;
         font-weight: bold;
         color: #043E44;
+    }
+
+    /* Список карточек товаров для мобильной версии */
+    .more-products__wrapper {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        height: 190px;
+        padding: 30px 20px 20px 2px;
+        box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .more-products__wrapper-info {
+        margin-bottom: 40px;
+        width: 180px;
+    }
+
+    .more-products__wrapper-line {
+        position: absolute;
+        right: 20px;
+        bottom: 60px;
+    }
+
+    .buy-button__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .buy-button__wrapper > span {
+        color: #429F3A;
+        font-size: 16px;
+    }
+    
+    .buy-button__wrapper span:last-of-type {
+        font-size: 32px;
+        font-weight: 1;
+    }
+
+    .buy-button {
+        position: absolute;
+        background-color: #fff;
+        color: #429F3A;
+        border-radius: 5px;
+        border: 1px solid #B2B2B2;
+        right: 20px;
+        bottom: 15px;
+        width: 55%;
+    }
+
+    .more-products__wrapper:last-child {
+        gap: 0;
+    }
+
+    .more-products__wrapper-image {
+        max-width: calc(var(--magazine-cards-width) / 3);
+        border-radius: 10px;
+        margin-bottom: 40px;
+        padding: 1px;
+    }
+
+    .more-products__list {
+        overflow-x: auto;
+        width: auto;
     }
 }
