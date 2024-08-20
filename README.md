@@ -10,9 +10,9 @@
     git add .\
     git commit -m"first commit"\
     git branch -M master\
-Затем введем следующую команду, в которой мы должны заменить <username> на имя пользователя вашей учетной записи
-на GitHub и <Repository-name> на имя созданного вами репозитория:\
-    git remote add origin https://github.com/<username>/<Repository-name>.git\
+Затем введем следующую команду, в которой мы должны заменить username на имя пользователя вашей учетной записи
+на GitHub и Repository-name на имя созданного вами репозитория:\
+    git remote add origin https://github.com/username/Repository-name.git\
 Затем введём следующие команды, которые отправят проект в указанный выше репозиторий:\
     git push -u origin master\
 Теперь наш проект есть в репозитории github.
@@ -28,7 +28,7 @@
 В самое начало добавим следующий параметр:
 
 {\
-    "homepage": "https://<Username>.github.io/<Repository-name>"\
+    "homepage": "https://username.github.io/Repository-name"\
     ...
 
 Затем мы добавим свойства “deploy” и “predeploy “ в поле script со следующими значениями:
@@ -39,8 +39,8 @@
     }   
 
 Шаг 4.
-Развертываем приложение, используя следующую команду в терминале:
-    npm run deploy
+Развертываем приложение, используя следующую команду в терминале:\
+    npm run deploy\
 Эта команда опубликует ваше приложение в ветке с именем gh-pages, и его можно открыть по ссылке,
 указанной в свойстве homepage, записанном в файле package.json.
 
